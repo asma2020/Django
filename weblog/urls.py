@@ -16,15 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin # pyright: ignore[reportMissingModuleSource]
 from django.urls import path # pyright: ignore[reportMissingModuleSource]
-from posts.views import index,home, post_list,post_detail, post_create
+from posts.views import index,home, post_list,post_detail, post_create, PostList,PostDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/',index),
     path('home/',home),
-    path('posts/', post_list, name='post-list'),
+    path('posts/', PostList.as_view()),
+    # path('posts/', post_list, name='post-list'),
     path('posts/create/', post_create),
-    path('posts/<int:post_id>/', post_detail, name='post-detail'),
-    
+    # path('posts/<int:post_id>/', post_detail, name='post-detail'),
+     path('posts/<int:pk>/', PostDetail.as_view()),
 
 ]
