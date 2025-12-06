@@ -1,0 +1,9 @@
+from django import forms # pyright: ignore[reportMissingModuleSource]
+
+class PostForm(forms.Form):
+    title = forms.CharField()
+    text = forms.CharField(widget=forms.Textarea)
+    is_enable = forms.BooleanField()
+    publish_date = forms.DateField()
+
+    

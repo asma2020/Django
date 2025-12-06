@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> get one post </title>
+</head>
+<body>    
+     <h1>{{post.title}} </h1>
+      <p>  {{post.text}} </p>
+      <ul>
+        {% for c in comments %}
+           <li>{{ c.content }}, {{c.created_time}} </li>
+        {%endfor%}
+      </ul>                         
+        
+         
+
+      <a href="/posts/"> BACK TO POSTS </a>
+    </li>
+    
+    </ul>
+    
+</body>
+</html>
